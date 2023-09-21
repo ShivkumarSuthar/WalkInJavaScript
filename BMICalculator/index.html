@@ -14,7 +14,7 @@
             BMI Calculator
         </h1>
         <fieldset>
-            <label for="height">Height in Inches</label> <input type="number" id="cm">
+            <label for="height">Height in Inches</label> <input type="number" id="Inch">
         </fieldset>
         <fieldset>
             <label for="Weight">Weight in Kg</label><input type="number" id="kg">
@@ -32,18 +32,18 @@
     </div>
 
     <script>
-        let cm=document.querySelector("#cm");
+        let inch=document.querySelector("#Inch");
         let kg=document.querySelector("#kg")
 
 let btn=document.querySelector("#btn");
 btn.addEventListener("click",function(){
-let HIC=cm.value*2.54;
+let HIM=inch.value*0.0254;
 let kgs=kg.value;
 
-// console.log(HIC +" & "+ kgs)
+console.log(HIM+" & "+ kgs)
 
-let bmi=kgs*100/(HIC);
-console.log(bmi);
+let bmi=kgs/Math.pow(HIM,2);
+window.alert(bmi);
 })
 
         
