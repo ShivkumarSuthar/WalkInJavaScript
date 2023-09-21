@@ -4,98 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project 2: BMI Calculator</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@500;700&family=Oswald:wght@400;700&family=Quicksand:wght@400;600&display=swap");
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Cormorant", serif;
-        font-family: "Oswald", sans-serif;
-        /* font-family: 'Quicksand', sans-serif; */
-      }
-      body {
-        background: linear-gradient(135deg, rgba(16, 217, 99, 0.467), #1267);
-        background-repeat: no-repeat;
-        height: 86.5vh;
-      }
-      .card {
-        width: 90%;
-        max-width: 474px;
-        background: #fff;
-        margin: 100px auto;
-        padding: 35px 30px;
-        border-radius: 30px;
-        height: 500px;
-        box-shadow: 2px 3px 100px 10px rgb(36, 37, 26);
-      }
-      .title {
-        color: #94a684;
-        text-align: center;
-        padding: 0 0 40px 0;
-        letter-spacing: 1px;
-      }
-      fieldset {
-        display: flex;
-        justify-content: safe;
-        border: none;
-        margin: 0 0 20px 0;
-      }
-      label {
-        font-size: 25px;
-        font-family: "Cormorant", serif;
-        color: #4f709c;
-        font-weight: bold;
-      }
-      input {
-        width: 80px;
-        margin: 0 0 0 20px;
-        padding: 5px 10px;
-        font-size: 15px;
-        accent-color: #5729e9;
-        caret-color: #94a684;
-        color: #4f709c;
-        border-radius: 0.8vmax;
-        border: 1px solid #94a684;
-      }
-      #btn {
-        width: 150px;
-        height: 40px;
-        /* margin: 0 0 0 30px; */
-        font-size: 20px;
-        color: #57375d;
-        font-family: century gothic;
-        background: #f0f0f0;
-        border: 1px solid #94a684;
-        box-shadow: 2px -2px 2px 3px #5629e964;
-        cursor: pointer;
-      }
-      #btn:active {
-        /* margin: -5px 1px 0 -1px  ; */
-        box-shadow: none;
-        transition: 0.05s ease-in-out;
-      }
-      .guide {
-        padding: 30px 0 0 0;
-      }
-      h3 {
-        color: #b9b4c7;
-        font-family: century gothic;
-        font-weight: lighter;
-        font-weight: lighter;
-      }
-      h5 {
-        font-weight: lighter;
-        color: #5c5470;
-        font-style: italic;
-      }
-      .result {
-        padding: 0 5px 0 0;
-        font-style: normal;
-        color: #5729e9;
-        font-size: 19px;
-      }
-    </style>
+    <link rel="stylesheet" href="./Dist/style.css">
+    
   </head>
   <body>
     <div class="card">
@@ -123,36 +33,6 @@
       </div>
     </div>
 
-    <script>
-      let inch = document.querySelector("#Inch");
-      let kg = document.querySelector("#kg");
-
-      let btn = document.querySelector("#btn");
-      btn.addEventListener("click", function () {
-        let HIM = inch.value * 0.0254;
-        let kgs = kg.value;
-        let bmi = (kgs / Math.pow(HIM, 2)).toFixed(2);
-
-        let under=18.6;
-        let normal=24.9;
-
-        if (HIM == "" || kgs == "") {
-          window.alert("Please fill details before proceed!, thanks");
-        }
-        else{
-            if(bmi<=under){
-              window.alert(`Your BMI Score is Under weight and value is ${bmi}`);
-            }
-            else if(bmi>under){
-              window.alert(`Your BMI Score is Normal weight and value is ${bmi}`);
-            }
-            else{
-              window.alert(`Your BMI Score is Over weight and value is ${bmi}`);
-          }
-        }   
-        }
-       
-      );
-    </script>
+    <script src="./Dist/script.js"></script>
   </body>
 </html>

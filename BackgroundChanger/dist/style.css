@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@500;700&family=Quicksand:wght@400;600&display=swap');
+
+*{
+    margin: 0;padding: 0;overflow: hidden; box-sizing: border-box;
+    /* font-family: 'Cormorant', serif; */
+font-family: 'Quicksand', sans-serif;
+}
+body{
+    background: linear-gradient(150deg, blue, red);
+height: 100vh;
+display: flex;
+/* justify-content: center; */
+margin: 100px auto;
+align-items: center;
+flex-direction: column;
+}
+.title{
+color:wheat;
+}
+fieldset{
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    border: none;
+align-items: center;
+}
+#btn{
+    width: 100px;
+    height: 40px;
+   margin: 10px auto;
+   font-size: 20px;
+   color: yellowgreen;
+   cursor: pointer;
+   transition: 0.5s ease;
+
+}
+#btn:active{
+box-shadow: 1px 0px 10px 2px #fff;
+/* transition: 0.ss ease-in-out; */
+}
+.clr{
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    border: none;
+    border-radius: 100vmax;
+    font-size: 25px;
+}
+.clr:focus{
+    color: green;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid green;
+}
+

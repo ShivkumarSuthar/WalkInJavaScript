@@ -5,65 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 1: BackgroundChanger</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@500;700&family=Quicksand:wght@400;600&display=swap');
-
-        *{
-            margin: 0;padding: 0;overflow: hidden; box-sizing: border-box;
-            /* font-family: 'Cormorant', serif; */
-font-family: 'Quicksand', sans-serif;
-        }
-        body{
-            background: linear-gradient(150deg, blue, red);
-        height: 100vh;
-display: flex;
-/* justify-content: center; */
-margin: 100px auto;
-align-items: center;
-flex-direction: column;
-        }
-        .title{
-color:wheat;
-        }
-        fieldset{
-            margin: 30px auto;
-            display: flex;
-            flex-direction: column;
-            border: none;
-align-items: center;
-        }
-        #btn{
-            width: 100px;
-            height: 40px;
-           margin: 10px auto;
-           font-size: 20px;
-           color: yellowgreen;
-           cursor: pointer;
-           transition: 0.5s ease;
-
-        }
-        #btn:active{
-box-shadow: 1px 0px 10px 2px #fff;
-/* transition: 0.ss ease-in-out; */
-        }
-        .clr{
-            width: 300px;
-            height: 50px;
-            text-align: center;
-            border: none;
-            border-radius: 100vmax;
-            font-size: 25px;
-        }
-        .clr:focus{
-            color: green;
-            font-weight: bold;
-            text-transform: uppercase;
-            border: 2px solid green;
-        }
-
-
-    </style>
+  <link rel="stylesheet" href="./dist/style.css">
 </head>
 <body>
     <h1 class="title">Project 1: BackgroundChanger</h1>
@@ -72,15 +14,6 @@ box-shadow: 1px 0px 10px 2px #fff;
     <button id="btn">Click Me</button>
 </fieldset>
 
-<script>
-    let clr=document.querySelector(".clr");
-    let btn=document.querySelector("#btn");
-
-    btn.addEventListener("click",function(){
-        let cv=clr.value;
-document.body.style.background=`${cv}`;
-console.warn(`color Changed to ${cv}`);
-    })
-</script>
+<script src="./dist/script.js"></script>
 </body>
 </html>
