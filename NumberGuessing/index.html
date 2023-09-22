@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 4: Number Guessing</title>
+
+    <style></style>
+  </head>
+  <body>
+    <div class="card">
+      <h3>Project 4: Number Guessing</h3>
+      <p class="info">Try and Guess the random number between 1 and 100.</p>
+      <p class="info2">You have 10 attempts to guess the right number.</p>
+
+      <fieldset>
+        <label for="number"> Guess the Number </label>
+        <input type="number" class="no" />
+      </fieldset>
+      <button class="submit">Submit Guess</button>
+
+      <div class="details">
+        <h5>Previous Guesses: <span class="previous"></span></h5>
+        <h5>Guesses Remaining: <span class="remain">10</span></h5>
+      </div>
+    </div>
+
+    <script>
+      const guess = document.querySelector(".no");
+      const btn = document.querySelector(".submit");
+      const preGuess = document.querySelector(".previous");
+      const remGuess = document.querySelector(".remain");
+      let guesses = 10;
+      let random = parseInt(Math.random() * 100);
+      let playGame = true;
+      let preValues = [];
+      let guessValue;
+
+      btn.addEventListener("click", function check(playGame) {
+             guessValue=Number(guess.value);
+        function validate(guessValue) {
+          if (guessValue === "") {
+            window.alert("Please write a number in input field!");
+          } else if (guessValue < 1) {
+            window.alert("Please write a number between 1 and 100!");
+          } else if (guessValue > 100) {
+            window.alert("Please write a number between 1 and 100!");
+          }else{
+
+        
+        function match(guess) {
+          if (guessValue == random) {
+            window.alert("Congratulation🎉🎉, You guess the right number!..");
+          } else if (guessValue) {
+            attempts();
+            preValues.push(guessValue);
+            preGuess.innerHTML = preValues;
+          }
+        }
+
+        function attempts(guess) {
+          if (guesses <= 10 && guesses >= 1) {
+            --guesses;
+            remGuess.innerHTML = guesses;
+          } else if (guesses == 0) {
+            endGame();
+            window.alert("Your are out of Guesses!");
+          }
+        }
+        //   function attempts(guess){
+
+        //   }
+        function endGame(guess) {
+          playGame = false;
+        }
+
+        function newGame() {
+          location.reload(true);
+        }  }
+        }
+      });
+    </script>
+  </body>
+</html>

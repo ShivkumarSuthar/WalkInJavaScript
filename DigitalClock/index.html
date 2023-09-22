@@ -5,28 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 3: Digital Clock</title>
     <link rel="stylesheet" href="/BMICalculator/Dist/style.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@800&display=swap');
-    *{
-
-        font-family: 'Orbitron', sans-serif;
-    }
-    .clock{
-        width: 400px;
-        height: 80px;
-        background: red;
-        margin: auto auto;
-        display: flex;
-    }
-    span{
-        width: 13%;
-        height: 100%;
-        background: rebeccapurple;
-        font-size: 60px;
-        border: 1px solid red;
-        text-align: center;
-    }
-  </style>
+<link rel="stylesheet" href="./dist/style.css">
 </head>
 <body>
     <div class="card">
@@ -43,52 +22,6 @@
             <span class="sFirst"></span>
             <span class="sSecond"></span>
         </div>
-    <script>
-
-
-
-
-let hFirst=document.querySelector(".hFirst");
-let hSecond=document.querySelector(".hSecond");
-let mFirst=document.querySelector(".mFirst");
-let mSecond=document.querySelector(".mSecond");
-let sFirst=document.querySelector(".sFirst");
-let sSecond=document.querySelector(".sSecond");
-
-
-
-setInterval(function clock(){
-    let date=new Date();
-// console.log(date);
-let hour=date.getHours();
-let min=date.getMinutes();
-let sec=date.getSeconds()
-
-//Hour
-let hff=Math.floor(hour/10);
-let hfs=hour%10
-
-//Minutes
-let mff=Math.floor(min/10);
-let mfs=min%10
-
-//seconds
-let sff=Math.floor(sec/10)
-let sfs=sec%10
-console.log(mff);
-    //hour
-    hFirst.innerHTML=hff;
-    hSecond.innerHTML=hfs;
-
-    //minutes
-    mFirst.innerHTML=mff;
-    mSecond.innerHTML=mfs;
-
-    //seconds
-    sFirst.innerHTML=sff;
-    sSecond.innerHTML=sfs;
-
-},100)
-    </script>
+ <script src="./dist/script.js"></script>
 </body>
 </html>
