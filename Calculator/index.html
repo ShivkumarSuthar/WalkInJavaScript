@@ -22,7 +22,7 @@ body {
 .card {
   width: 90%;
   max-width: 424px;
-  background: #F1EFEF;
+background: #dde1e7;
   margin: 50px auto;
   padding: 35px 30px;
   border-radius: 30px;
@@ -35,8 +35,8 @@ fieldset{
     height: 100%;
     max-height: 80px;
     margin: 20px auto;
-    border-radius: 100vmax;  box-shadow: 2px 2px 5px gray,
-    -2px -2px 5px gray;
+    border-radius: 100vmax;
+      box-shadow: -5px -5px 9px rgba(255,255,255,0.45), 5px 5px 9px rgba(94,104,121,0.3);
     display: flex;
     justify-content: flex-end;
     padding:  0 40px 0 0 ;
@@ -45,7 +45,7 @@ fieldset{
     text-align: center;
     font-weight: bold;
     color: gray;
-    font-family: "Oswald", sans-serif;
+    font-family: "Oswald", sans-serif;border: none;
 }
 .tabs{
     width: 100%;
@@ -54,6 +54,7 @@ fieldset{
     max-height: 500px;
     height: 100%;
     margin: auto auto;
+
 }
 .row{
     margin: 30px auto;
@@ -64,18 +65,21 @@ fieldset{
 .tab{
     width: 60px;
     height: 60px;
-    border: 1px solid gray;
+    border: none;
     font-size: 28px;
     text-align: center;
     font-weight: bold;
     color: gray;
     border-radius: 50%;
     padding: 5px 5px;
-    box-shadow: 2px 2px 5px gray,
-    -2px -2px 5px gray;
+    /* box-shadow: 2px 2px 5px gray,
+    -2px -2px 5px gray; */
+    box-shadow: -5px -5px 9px rgba(255,255,255,0.45), 5px 5px 9px rgba(94,104,121,0.3);
+
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 .equal{
     width: 160px;
@@ -111,47 +115,126 @@ padding: 20px 0 0 0;
         <div class="tabs">
             <!-- first upper row -->
             <div class="row">
-                <span class="cancel tab">C</span>
-                <span class="delete tab">DEL</span>
-                <span class="percentage tab">%</span>
-                <span class="slace tab">/</span>
+                <button class="cancel tab">C</button>
+                <button class="delete tab">DEL</button>
+                <button class="percentage tab">%</button>
+                <button class="slace tab">/</button>
             </div>
 
             <!-- second row -->
             <div class="row">
-                <span class="seven tab">7</span>
-                <span class="eight tab">8</span>
-                <span class="nine tab">9</span>
-                <span class="multiply tab">*</span>
+                <button class="seven tab">7</button>
+                <button class="eight tab">8</button>
+                <button class="nine tab">9</button>
+                <button class="multiply tab">*</button>
             </div>
 
             <!-- third row -->
             <div class="row">
-                <span class="four tab">4</span>
-                <span class="five tab">5</span>
-                <span class="six tab">6</span>
-                <span class="minus tab">-</span>
+                <button class="four tab">4</button>
+                <button class="five tab">5</button>
+                <button class="six tab">6</button>
+                <button class="minus tab">-</button>
             </div>
 
             <!-- third row -->
             <div class="row">
-                <span class="one tab">1</span>
-                <span class="two tab">2</span>
-                <span class="three tab">3</span>
-                <span class="plus tab">+</span>
+                <button class="one tab">1</button>
+                <button class="two tab">2</button>
+                <button class="three tab">3</button>
+                <button class="plus tab">+</button>
             </div>
 
             <!-- fourth and last row -->
             <div class="row">
-                <span class="dot tab">.</span>
-                <span class="zero tab">0</span>
-                <span class="equal tab">=</span>
+                <button class="dot tab">.</button>
+                <button class="zero tab">0</button>
+                <button class="equal tab">=</button>
                 
             </div>
         </div>
     </div>
     
     <script>
+let cancel=document.querySelector(".cancel");
+let deletes=document.querySelector(".delete");
+let percentage=document.querySelector(".percentage");
+let divide=document.querySelector(".slace");
+let seven=document.querySelector(".seven");
+let one=document.querySelector(".one");
+let two=document.querySelector(".two");
+let three=document.querySelector(".three");
+let four=document.querySelector(".four");
+let five=document.querySelector(".five");
+let six=document.querySelector(".six");
+let eight=document.querySelector(".eight");
+let nine=document.querySelector(".nine");
+let plus=document.querySelector(".plus");
+let minus=document.querySelector(".minus");
+let dot=document.querySelector(".dot");
+let multiply=document.querySelector(".multiply");
+let zero=document.querySelector(".zero");
+let equal=document.querySelector(".equal");
+let result=document.querySelector(".result");
+
+function one(){
+    result.innerHTML=result+1;
+    //
+}
+function two(){
+    result.innerHTML=result+2;
+    //
+}
+function three(){
+    result.innerHTML=result+3;
+    //
+}
+function four(){
+    result.innerHTML=result+4;
+  
+    //
+}
+function five(){
+    result.innerHTML=result+5;
+
+    //
+}
+function six(){
+    result.innerHTML=result+6;
+
+    //
+}
+function seven(){
+    result.innerHTML=result+7;
+   
+    //
+}
+function eight(){
+    result.innerHTML=result+8;
+    //
+}
+function nine(){
+    result.innerHTML=result+9;
+    //
+}
+function dot(){
+    result.innerHTML=result+0.0;
+    //
+}
+function plus(){
+    
+    //
+}
+function minus(){
+    //
+}
+function multiply(){
+    //
+}
+function divide(){
+    //
+}
+
 
     </script>
 </body>
