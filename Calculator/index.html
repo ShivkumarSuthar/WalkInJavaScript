@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 5: Calculator</title>
+    <style>
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@500;700&family=Oswald:wght@400;700&family=Quicksand:wght@400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: "Cormorant", serif; */
+  font-family: "Oswald", sans-serif;
+  /* font-family: 'Quicksand', sans-serif; */
+}
+body {
+  background: linear-gradient(135deg, #F1EFEF, #713ABE);
+  background-repeat: no-repeat;
+  height: 93.3vh;
+}
+.card {
+  width: 90%;
+  max-width: 424px;
+  background: #F1EFEF;
+  margin: 50px auto;
+  padding: 35px 30px;
+  border-radius: 30px;
+  height: 650px;
+  box-shadow: 2px 3px 100px 10px #ffffff81;
+}
+fieldset{
+    width: 100%;
+    max-width: 420px;
+    height: 100%;
+    max-height: 80px;
+    margin: 20px auto;
+    border-radius: 100vmax;  box-shadow: 2px 2px 5px gray,
+    -2px -2px 5px gray;
+    display: flex;
+    justify-content: flex-end;
+    padding:  0 40px 0 0 ;
+    align-items: center;
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+    color: gray;
+    font-family: "Oswald", sans-serif;
+}
+.tabs{
+    width: 100%;
+    max-width: 424px;
+    /* padding: 35px 30px; */
+    max-height: 500px;
+    height: 100%;
+    margin: auto auto;
+}
+.row{
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.tab{
+    width: 60px;
+    height: 60px;
+    border: 1px solid gray;
+    font-size: 28px;
+    text-align: center;
+    font-weight: bold;
+    color: gray;
+    border-radius: 50%;
+    padding: 5px 5px;
+    box-shadow: 2px 2px 5px gray,
+    -2px -2px 5px gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.equal{
+    width: 160px;
+    border-radius: 40px;
+    font-size: 60px;
+}
+.dot{
+    padding: 0 0 35px 0;
+    font-size: 50px;
+}
+.plus{
+    font-size: 50px;
+    padding: 0 0 5px 0;
+}
+.minus{
+    font-size: 60px;
+    padding: 0 0 15px 0;
+}
+.multiply{
+    font-size: 50px;
+padding: 20px 0 0 0;
+}
+    </style>
+</head>
+<body>
+    <!-- <h3 class="title">Calculator</h3> -->
+    <div class="card">
+
+        <fieldset>
+            <span class="result">0</span>
+        </fieldset>
+
+        <div class="tabs">
+            <!-- first upper row -->
+            <div class="row">
+                <span class="cancel tab">C</span>
+                <span class="delete tab">DEL</span>
+                <span class="percentage tab">%</span>
+                <span class="slace tab">/</span>
+            </div>
+
+            <!-- second row -->
+            <div class="row">
+                <span class="seven tab">7</span>
+                <span class="eight tab">8</span>
+                <span class="nine tab">9</span>
+                <span class="multiply tab">*</span>
+            </div>
+
+            <!-- third row -->
+            <div class="row">
+                <span class="four tab">4</span>
+                <span class="five tab">5</span>
+                <span class="six tab">6</span>
+                <span class="minus tab">-</span>
+            </div>
+
+            <!-- third row -->
+            <div class="row">
+                <span class="one tab">1</span>
+                <span class="two tab">2</span>
+                <span class="three tab">3</span>
+                <span class="plus tab">+</span>
+            </div>
+
+            <!-- fourth and last row -->
+            <div class="row">
+                <span class="dot tab">.</span>
+                <span class="zero tab">0</span>
+                <span class="equal tab">=</span>
+                
+            </div>
+        </div>
+    </div>
+    
+    <script>
+
+    </script>
+</body>
+</html>
