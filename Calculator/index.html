@@ -1,241 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project 5: Calculator</title>
     <style>
-@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@500;700&family=Oswald:wght@400;700&family=Quicksand:wght@400;600&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  /* font-family: "Cormorant", serif; */
-  font-family: "Oswald", sans-serif;
-  /* font-family: 'Quicksand', sans-serif; */
-}
-body {
-  background: linear-gradient(135deg, #F1EFEF, #713ABE);
-  background-repeat: no-repeat;
-  height: 93.3vh;
-}
-.card {
-  width: 90%;
-  max-width: 424px;
-background: #dde1e7;
-  margin: 50px auto;
-  padding: 35px 30px;
-  border-radius: 30px;
-  height: 650px;
-  box-shadow: 2px 3px 100px 10px #ffffff81;
-}
-fieldset{
-    width: 100%;
-    max-width: 420px;
-    height: 100%;
-    max-height: 80px;
-    margin: 20px auto;
-    border-radius: 100vmax;
-      box-shadow: -5px -5px 9px rgba(255,255,255,0.45), 5px 5px 9px rgba(94,104,121,0.3);
-    display: flex;
-    justify-content: flex-end;
-    padding:  0 40px 0 0 ;
-    align-items: center;
-    font-size: 50px;
-    text-align: center;
-    font-weight: bold;
-    color: gray;
-    font-family: "Oswald", sans-serif;border: none;
-}
-.tabs{
-    width: 100%;
-    max-width: 424px;
-    /* padding: 35px 30px; */
-    max-height: 500px;
-    height: 100%;
-    margin: auto auto;
-
-}
-.row{
-    margin: 30px auto;
-    display: flex;
-    justify-content: space-evenly;
-    
-}
-.tab{
-    width: 60px;
-    height: 60px;
-    border: none;
-    font-size: 28px;
-    text-align: center;
-    font-weight: bold;
-    color: gray;
-    border-radius: 50%;
-    padding: 5px 5px;
-    /* box-shadow: 2px 2px 5px gray,
+      @import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@500;700&family=Oswald:wght@400;700&family=Quicksand:wght@400;600&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* font-family: "Cormorant", serif; */
+        font-family: "Oswald", sans-serif;
+        /* font-family: 'Quicksand', sans-serif; */
+      }
+      body {
+        background: linear-gradient(135deg, #f1efef, #713abe);
+        background-repeat: no-repeat;
+        height: 93.3vh;
+      }
+      .card {
+        width: 90%;
+        max-width: 424px;
+        background: #dde1e7;
+        margin: 50px auto;
+        padding: 35px 30px;
+        border-radius: 30px;
+        height: 650px;
+        box-shadow: 2px 3px 100px 10px #ffffff81;
+      }
+      fieldset {
+        border: none;
+        background: #dde1e7;
+      }
+      input {
+        background: #dde1e7;
+        width: 100%;
+        max-width: 420px;
+        height: 100%;
+        max-height: 100px;
+        margin: 20px auto;
+        border-radius: 100vmax;
+        box-shadow: -5px -5px 9px rgba(255, 255, 255, 0.45),
+          5px 5px 9px rgba(94, 104, 121, 0.3);
+        display: flex;
+        justify-content: flex-end;
+        padding: 0 30px 0 30px;
+        align-items: center;
+        font-size: 50px;
+        text-align: end;
+        font-weight: bold;
+        color: gray;
+        font-family: "Oswald", sans-serif;
+        border: none;
+      }
+      .tabs {
+        width: 100%;
+        max-width: 424px;
+        /* padding: 35px 30px; */
+        max-height: 500px;
+        height: 100%;
+        margin: auto auto;
+      }
+      .row {
+        margin: 30px auto;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .tab {
+        width: 60px;
+        height: 60px;
+        border: none;
+        font-size: 28px;
+        text-align: center;
+        font-weight: bold;
+        color: gray;
+        border-radius: 50%;
+        padding: 5px 5px;
+        /* box-shadow: 2px 2px 5px gray,
     -2px -2px 5px gray; */
-    box-shadow: -5px -5px 9px rgba(255,255,255,0.45), 5px 5px 9px rgba(94,104,121,0.3);
+        box-shadow: -5px -5px 9px rgba(255, 255, 255, 0.45),
+          5px 5px 9px rgba(94, 104, 121, 0.3);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-.equal{
-    width: 160px;
-    border-radius: 40px;
-    font-size: 60px;
-}
-.dot{
-    padding: 0 0 35px 0;
-    font-size: 50px;
-}
-.plus{
-    font-size: 50px;
-    padding: 0 0 5px 0;
-}
-.minus{
-    font-size: 60px;
-    padding: 0 0 15px 0;
-}
-.multiply{
-    font-size: 50px;
-padding: 20px 0 0 0;
-}
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+      .equal {
+        width: 160px;
+        border-radius: 40px;
+        font-size: 60px;
+      }
+      .dot {
+        padding: 0 0 35px 0;
+        font-size: 50px;
+      }
+      .plus {
+        font-size: 50px;
+        padding: 0 0 5px 0;
+      }
+      .minus {
+        font-size: 60px;
+        padding: 0 0 15px 0;
+      }
+      .multiply {
+        font-size: 50px;
+        padding: 20px 0 0 0;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- <h3 class="title">Calculator</h3> -->
     <div class="card">
+      <fieldset>
+        <input class="result" />
+      </fieldset>
 
-        <fieldset>
-            <span class="result">0</span>
-        </fieldset>
-
-        <div class="tabs">
-            <!-- first upper row -->
-            <div class="row">
-                <button class="cancel tab">C</button>
-                <button class="delete tab">DEL</button>
-                <button class="percentage tab">%</button>
-                <button class="slace tab">/</button>
-            </div>
-
-            <!-- second row -->
-            <div class="row">
-                <button class="seven tab">7</button>
-                <button class="eight tab">8</button>
-                <button class="nine tab">9</button>
-                <button class="multiply tab">*</button>
-            </div>
-
-            <!-- third row -->
-            <div class="row">
-                <button class="four tab">4</button>
-                <button class="five tab">5</button>
-                <button class="six tab">6</button>
-                <button class="minus tab">-</button>
-            </div>
-
-            <!-- third row -->
-            <div class="row">
-                <button class="one tab">1</button>
-                <button class="two tab">2</button>
-                <button class="three tab">3</button>
-                <button class="plus tab">+</button>
-            </div>
-
-            <!-- fourth and last row -->
-            <div class="row">
-                <button class="dot tab">.</button>
-                <button class="zero tab">0</button>
-                <button class="equal tab">=</button>
-                
-            </div>
+      <div class="tabs">
+        <!-- first upper row -->
+        <div class="row">
+          <button class="cancel tab">C</button>
+          <button class="delete tab">DEL</button>
+          <button class="percentage tab">%</button>
+          <button class="slace tab">/</button>
         </div>
+
+        <!-- second row -->
+        <div class="row">
+          <button class="seven tab">7</button>
+          <button class="eight tab">8</button>
+          <button class="nine tab">9</button>
+          <button class="multiply tab">*</button>
+        </div>
+
+        <!-- third row -->
+        <div class="row">
+          <button class="four tab">4</button>
+          <button class="five tab">5</button>
+          <button class="six tab">6</button>
+          <button class="minus tab">-</button>
+        </div>
+
+        <!-- third row -->
+        <div class="row">
+          <button class="one tab">1</button>
+          <button class="two tab">2</button>
+          <button class="three tab">3</button>
+          <button class="plus tab">+</button>
+        </div>
+
+        <!-- fourth and last row -->
+        <div class="row">
+          <button class="dot tab">.</button>
+          <button class="zero tab">0</button>
+          <button class="equal tab">=</button>
+        </div>
+      </div>
     </div>
-    
+
     <script>
-let cancel=document.querySelector(".cancel");
-let deletes=document.querySelector(".delete");
-let percentage=document.querySelector(".percentage");
-let divide=document.querySelector(".slace");
-let seven=document.querySelector(".seven");
-let one=document.querySelector(".one");
-let two=document.querySelector(".two");
-let three=document.querySelector(".three");
-let four=document.querySelector(".four");
-let five=document.querySelector(".five");
-let six=document.querySelector(".six");
-let eight=document.querySelector(".eight");
-let nine=document.querySelector(".nine");
-let plus=document.querySelector(".plus");
-let minus=document.querySelector(".minus");
-let dot=document.querySelector(".dot");
-let multiply=document.querySelector(".multiply");
-let zero=document.querySelector(".zero");
-let equal=document.querySelector(".equal");
-let result=document.querySelector(".result");
+      let result = " ";
+      let tab = document.querySelectorAll(".tab");
 
-function one(){
-    result.innerHTML=result+1;
-    //
-}
-function two(){
-    result.innerHTML=result+2;
-    //
-}
-function three(){
-    result.innerHTML=result+3;
-    //
-}
-function four(){
-    result.innerHTML=result+4;
-  
-    //
-}
-function five(){
-    result.innerHTML=result+5;
-
-    //
-}
-function six(){
-    result.innerHTML=result+6;
-
-    //
-}
-function seven(){
-    result.innerHTML=result+7;
-   
-    //
-}
-function eight(){
-    result.innerHTML=result+8;
-    //
-}
-function nine(){
-    result.innerHTML=result+9;
-    //
-}
-function dot(){
-    result.innerHTML=result+0.0;
-    //
-}
-function plus(){
-    
-    //
-}
-function minus(){
-    //
-}
-function multiply(){
-    //
-}
-function divide(){
-    //
-}
-
-
+      Array.from(tab).forEach((button) => {
+        button.addEventListener("click", (e) => {
+          if (e.target.innerHTML == "=") {
+            result = eval(result);
+            document.querySelector(".result").value = result;
+          } else if (e.target.innerHTML == "C") {
+            result = "";
+            document.querySelector(".result").value = result;
+          } else if (e.target.innerHTML == "DEL") {
+            result = Math.floor(result * 0.1);
+            document.querySelector(".result").value = result;
+          } else {
+            result = result + e.target.innerHTML;
+            // console.log(result);
+            document.querySelector(".result").value = result;
+          }
+          //Todo: Need to work on symbol repeatation 
+        });
+      });
     </script>
-</body>
+  </body>
 </html>
