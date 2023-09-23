@@ -1,0 +1,29 @@
+/* box-shadow: -5px -5px 9px rgba(255, 255, 255, 0.45),
+5px 5px 9px rgba(94, 104, 121, 0.3); */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@500;700&family=Oswald:wght@400;700&family=Quicksand:wght@400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: "Cormorant", serif; */
+  font-family: "Oswald", sans-serif;
+  /* font-family: 'Quicksand', sans-serif; */
+}
+body {
+  background: linear-gradient(135deg, #f1efef, #713abe);
+  background-repeat: no-repeat;
+  height: 100%;
+  max-height: 100.3vh;
+}
+.card {
+  width: 90%;
+  max-width: 524px;
+  /* background: #dde1e7; */
+  background: #5C8984;
+  margin: 50px auto;
+  padding: 35px 30px;
+  border-radius: 10px;
+  height: 556px;
+  box-shadow: 2px 3px 100px 10px #ffffff81;
+}

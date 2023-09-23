@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 6: To do List</title>
+    <link rel="stylesheet" href="/comman.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;0,800;1,300&display=swap");
+      .title {
+        text-align: center;
+        margin: 50px auto;
+        /* font-family: "Cormorant", serif; */
+      }
+      fieldset {
+        border: none;
+        background: none;
+        display: flex;
+      }
+      #input {
+        background: #dde1e7;
+        width: 100%;
+        min-width: 390px;
+        max-width: 390px;
+        height: 60px;
+        max-height: 60px;
+        min-height: 60px;
+        margin: 10px 0;
+        /* border-radius: 100vmax; */
+        /* box-shadow: -5px -5px 9px rgba(255, 255, 255, 0.45),
+          5px 5px 9px rgba(94, 104, 121, 0.3); */
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px 30px 0 30px;
+        align-items: center;
+        font-size: 15 px;
+        text-align: start;
+        font-weight: bold;
+        color: gray;
+        font-family: "Oswald", sans-serif;
+        border: none;
+      }
+      #input:focus {
+        border: none;
+        box-shadow: none;
+      }
+      .add {
+        width: 60px;
+        height: 60px;
+        margin: 10px 10px;
+        font-size: 100px;
+        padding: 0 0 10px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #545b77;
+      }
+      h3 {
+        margin: 40px 0 10px 0;
+        font-size: 30px;
+        color: #dde6ed;
+        font-family: "Alegreya Sans", sans-serif;
+      }
+      .todo {
+        width: 100%;
+        max-width: 460px;
+        height: 350px;
+        /* min-height: 350px;
+        max-height: 350px; */
+        /* background: ; */
+        color: #000;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: auto;
+        align-content: flex-start;
+      }
+      .todo_list{
+        font-size: 15px;
+        color: #000;
+    list-style-type:decimal-leading-zero;
+    background: #545b77;
+    width: 390px;
+    height: 40px;
+    /* min-height: 40px; */
+    max-height: max-content;
+    padding: 10px 20px;
+    margin: 5px 0;
+      }
+      .delete{
+        width: 40px;
+        height: 40px;
+        margin: 5px  0 10px 10px;
+        font-size: 25px;
+        padding: 5px 0 5px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #000;
+        background: #545b77;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title">Project 6: The To DO List</h1>
+    <div class="card">
+      <fieldset>
+        <textarea cols="30" rows="3" id="input">
+Please Write Here you TO Do list</textarea
+        >
+        <button class="add">+</button>
+      </fieldset>
+      <h3>List of To do:</h3>
+      <div class="todo">
+
+      </div>
+    </div>
+
+    <script>
+      let btn = document.querySelectorAll(".add");
+      let list = document.querySelector(".todo");
+
+      Array.from(btn).forEach((button) => {
+        let input = document.querySelector("#input");
+
+        let card = document.querySelector(".card");
+
+        button.addEventListener("click", () => {
+            let userValue = input.value.trim();
+
+            if (userValue !== "") {
+            let li = document.createElement("li");
+            li.className="todo_list"
+            li.textContent = userValue;
+            list.appendChild(li);
+
+            input.value = ""; 
+            
+            
+            let del=document.createElement("span");
+            del.className="delete";
+            del.innerHTML=`<i class="fa-solid fa-trash"></i>`;
+            list.append(del)
+
+            del.addEventListener("click",()=>{
+                list.removeChild(li);
+                list.removeChild(del);
+             
+            })
+            // Clear the input field
+          }
+
+        //   let div = document.createElement("div");
+        //   div.className = "todo_div";
+        //   div.innerHTML = userValue;
+        //   let listContent= list.innerHTML;
+        //   listContent.append(div);
+        //   console.log(userValue);
+        });
+      });
+    </script>
+  </body>
+</html>
