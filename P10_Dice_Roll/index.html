@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 10: Dice Roll</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style></style>
+</head>
+<body>
+    <div class="card">
+
+        <h3 class="title">Dice Roll Simulator</h3>
+
+        <div class="dice">
+            <i class="fa-solid fa-dice-one"></i>
+            <i class="fa-solid fa-dice-two"></i>
+            <i class="fa-solid fa-dice-three"></i>
+            <i class="fa-solid fa-dice-four"></i>
+            <i class="fa-solid fa-dice-five"></i>
+            <i class="fa-solid fa-dice-six"></i>
+        </div>
+        <button class="roll">Roll Dice</button>
+    </div>
+    <script>
+        let one=document.querySelector(".fa-dice-one");
+        let two=document.querySelector(".fa-dice-two");
+        let three=document.querySelector(".fa-dice-three");
+        let four=document.querySelector(".fa-dice-four");
+        let five=document.querySelector(".fa-dice-five");
+        let six=document.querySelector(".fa-dice-six");
+ let roll=document.querySelector(".roll")
+        one.style.display="none"
+        two.style.display="none"
+        three.style.display="none"
+        four.style.display="none"
+        five.style.display="none"
+        six.style.display="none"
+
+        roll.addEventListener("click",()=>{
+            // console.log("object");
+
+            let ranNum=Math.floor(Math.random()*6)+1;
+
+            // console.log(ranNum);
+
+          setInterval(()=>{
+            switch(ranNum){
+                case 1: 
+                one.style.display="block";
+                break;
+
+                case 2: 
+                two.style.display="block";
+                break;
+
+                case 3: 
+                three.style.display="block";
+                break;
+
+                case 4: 
+                four.style.display="block";
+                break;
+
+                case 5: 
+                five.style.display="block";
+                break;
+
+                case 6: 
+                six.style.display="block";
+                break;
+            }
+          },1000)
+
+            
+          
+        })
+
+
+    </script>
+</body>
+</html>
