@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Project 8: Weather Detector</title>
+        <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@500;700&family=Oswald:wght@400;700&family=Quicksand:wght@400;600&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* font-family: "Cormorant", serif; */
+        font-family: "Oswald", sans-serif;
+        font-family: 'Quicksand', sans-serif;
+      
+    margin: 0;padding: 0;list-style-type: none;
+    text-decoration: none;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.card{
+    width: 100%;
+    max-width: 574px;
+margin: 100px auto;
+padding: 70px 40px;
+border-radius: 20px;
+    background: linear-gradient(135deg, cyan, rgb(204, 219, 204));
+}
+.search{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+.search .input{
+    width: 450px;height: 80px;
+    margin: 0 20px 0 0;
+    text-align: center;
+    border: none;
+    border-radius: 100vmax;
+    font-size: 30px;
+}
+.search .find{
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: none;
+}
+.search .find img{
+    width: 30px;
+}
+.weather{
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+justify-content: center;
+}
+.wImg{
+width: 200px;
+}
+.temp{
+    font-size: 80px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+.city{
+    font-size: 40px;
+    font-weight: lighter;
+    margin-bottom: 20px;
+}
+
+.details{
+    margin: 20px 0 0 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+align-items: center;
+}
+.details .col{
+    display: flex;
+
+
+}
+.details .col img{
+    width: 80px; margin: 0 20px 0 0;
+}
+.per{
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0px 0 0 0;
+}
+.km{
+    font-size: 30px;
+    font-weight: bold;
+}
+.humidity{
+    font-size: 20px;
+}
+.wind{
+    font-size: 20px;
+}
+</style>
+</head>
+<body>
+    <div class="card">
+<div class="search">
+    <input type="text" class="input" spellcheck="true" placeholder="City Please! "> 
+    <button class="find"><img src="./images/search.png" alt="Search"></button>
+</div>
+<div class="weather">
+    <img src="./images/clear.png" class=" wImg">
+    <h2 class="temp">7°c</h2>
+    <h3 class="city">New York</h3>
+
+    <div class="details">
+        <div class="col">
+            <img src="./images/humidity.png" alt="" >
+            <div>
+                <p class="per ">48%</p>
+                <p class="humidity">humidity</p>
+            </div>
+        </div>
+        <div class="col">
+            <img src="./images/wind.png" alt="">
+            <div>
+                <p class="km ">48 km/hr</p>
+                <p class="wind">Wind Speed</p>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+    
+
+
+    <script>
+
+        const APIKey="326b58ae952b741ef7b547ab3bd14dd7";
+        const APIURL="https://api.openweathermap.org/data/2.5/weather?units=metric&q=pune";
+
+        async function weather(){
+            const respone=await fetch(APIURL + `&appid=${APIKey}`);
+            var data=await respone.json();
+            console.log(data);
+           console.log(data.main.temp); ;
+           console.log(data.main.humidity);;
+           console.log(data.wind.speed);
+
+
+        }
+        weather()
+    </script>
+</body>
+</html>
