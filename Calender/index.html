@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 7: Calender</title>
+    <style>
+   @import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@500;700&family=Oswald:wght@400;700&family=Quicksand:wght@400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: "Cormorant", serif; */
+  font-family: "Oswald", sans-serif;
+  /* font-family: 'Quicksand', sans-serif; */
+}
+      body {
+        background: linear-gradient(135deg, #4682a9, #91c8e4);
+        /* height: 100vh;
+        width: 100vw; */
+        background-repeat: no-repeat;
+        height:90vh;
+      }
+      .card {
+        width: 500px;
+        height: 500px;
+border: 1px solid gray;
+margin: 100px auto;
+      }
+  
+    </style>
+  </head>
+  <body>
+    <!-- <div class="card">
+      <div class="row top">
+        <span class="month">March</span>
+        <span class="details"
+          ><span>Thur</span><span class="date">18</span
+          ><span class="year">2023</span></span
+        >
+      </div>
+      <div class="week">
+        <span class="days">Mon</span>
+        <span class="days">Tue</span>
+        <span class="days">Wed</span>
+        <span class="days">Thu</span>
+        <span class="days">Fri</span>
+        <span class="days">Sat</span>
+        <span class="days">Sun</span>
+      </div>
+      <div class="dates">
+        <span class="date">1</span>
+        <span class="date">2</span>
+        <span class="date">3</span>
+        <span class="date">4</span>
+        <span class="date">5</span>
+        <span class="date">6</span>
+        <span class="date">7</span>
+        <span class="date">8</span>
+        <span class="date">9</span>
+        <span class="date">10</span>
+        <span class="date">11</span>
+        <span class="date">12</span>
+        <span class="date">13</span>
+        <span class="date">14</span>
+        <span class="date">15</span>
+        <span class="date">16</span>
+        <span class="date">17</span>
+        <span class="date">18</span>
+        <span class="date">19</span>
+        <span class="date">20</span>
+        <span class="date">21</span>
+        <span class="date">22</span>
+        <span class="date">23</span>
+        <span class="date">24</span>
+        <span class="date">25</span>
+        <span class="date">26</span>
+        <span class="date">27</span>
+        <span class="date">28</span>
+        <span class="date">28</span>
+        <span class="date">28</span>
+        <span class="date">28</span>
+        <span class="date">28</span>
+        <span class="date">28</span>
+      </div>
+    </div> -->
+  <!-- Todo Month Calender -->
+
+  <div class="card">
+<div class="row">
+  <span class="month"></span>
+  </div>
+
+<div class="row">
+  <span class="week"></span>
+</div>
+
+<div class="row">
+  <span class="date"></span>
+
+</div>
+
+<div class="row">
+  <span class="year"></span>
+
+</div>
+  </div>
+
+
+
+  <script>
+    let date=new Date();
+    let dates=date.getDate();
+
+
+    let dAtrray=["sun","mon","Tue","Wed","Thu","Fri","Sat"];
+    let day=dAtrray[date.getDay()];
+
+
+    let mArray=["Jan","Feb","March","April","June","July","Aug","Sep","Oct","Nov","Dec"]
+    let month= mArray[date.getMonth()];
+    let year=date.getFullYear();
+
+    const cMonth=document.querySelector(".month");
+    const CWeek=document.querySelector(".week");
+    const cDate=document.querySelector(".date");
+    const cYear=document.querySelector(".year");
+
+    function calender(){
+      cMonth.innerHTML=month;
+      CWeek.innerHTML=day;
+      cDate.innerHTML=dates;
+      cYear.innerHTML=year;
+    }
+
+    setInterval(calender,100)
+  </script>
+  </body>
+</html>
