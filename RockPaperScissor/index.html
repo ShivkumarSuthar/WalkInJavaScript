@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 9: Rock Paper and Scissors</title>
+    <style></style>
+  </head>
+  <body>
+    <div class="card">
+      <h3 class="title">Rock Paper and Scissors Game</h3>
+
+      <div class="game">
+        <h4 class="title2">Choose Your Move:</h4>
+        <div class="chooses">
+          <button class="choose">rock</button>
+          <button class="choose">paper</button>
+          <button class="choose">scissor</button>
+        </div>
+        <h5 class="results">
+          Your Score: <span class="result">0</span> and Computer Score is :
+          <span class="score">0</span>
+        </h5>
+      </div>
+    </div>
+    <script>
+      let buttons = document.querySelectorAll(".choose");
+      let result = document.querySelector(".result");
+      let score = document.querySelector(".score");
+      let added = document.querySelector(".results");
+      let player;
+      let computer;
+
+      buttons.forEach((button) =>
+        button.addEventListener("click", () => {
+          player = button.textContent;
+          computerTurn();
+          added.textContent= chooseChecking();
+        })
+      );
+      function computerTurn() {
+        let ranNum = Math.floor(Math.random() * 3) + 1;
+
+        switch (ranNum) {
+          case 1:
+            computer = "rock";
+            break;
+
+          case 2:
+            computer = "paper";
+            break;
+
+          case 3:
+            computer = "scissor";
+        }
+      }
+      function chooseChecking() {
+        let p = document.createElement("p");
+        p.className = "FinalResult";
+
+        added.prepend(p);
+
+        if (player == computer) {
+            return "Tie";
+        } else if (computer == "rock") {
+          return player == "paper" ? "You win!" : "You Lose!";
+        } else if (computer == "paper") {
+          return player == "scissor" ? "You win!" : "You Lose!";
+        } else if (computer == "scissor") {
+          return player == "paper" ? "You Loss!" : "You Win!";
+        }
+      }
+    </script>
+  </body>
+</html>
