@@ -5,29 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project 7: Calender</title>
     <style>
-   @import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@500;700&family=Oswald:wght@400;700&family=Quicksand:wght@400;600&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  /* font-family: "Cormorant", serif; */
-  font-family: "Oswald", sans-serif;
-  /* font-family: 'Quicksand', sans-serif; */
-}
+      @import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@500;700&family=Oswald:wght@400;700&family=Quicksand:wght@400;600&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* font-family: "Cormorant", serif; */
+        font-family: "Oswald", sans-serif;
+        /* font-family: 'Quicksand', sans-serif; */
+      }
       body {
         background: linear-gradient(135deg, #4682a9, #91c8e4);
         /* height: 100vh;
         width: 100vw; */
         background-repeat: no-repeat;
-        height:90vh;
+        height: 90vh;
       }
       .card {
-        width: 500px;
-        height: 500px;
-border: 1px solid gray;
-margin: 100px auto;
+        width: 400px;
+        height: 350px;
+        border: 1px solid gray;
+        border-radius: 20px;
+        margin: 100px auto;
       }
-  
+      .row {
+        background: #fff;
+        height: 100px;
+      }
+      .m {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-size: 40px;
+        background: #e55604;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 20px 0;
+        border-radius: 20px 20px 0 0;
+        letter-spacing: 2px;
+      }
+      .w{
+        width: 100%;
+        height: 50px;
+        text-align: center;
+        padding: 30px 0;
+        font-size: 30px;
+        text-transform: uppercase;
+        font-weight:lighter;
+        color: grey;
+      }
+      .d{
+        text-align: center;
+        padding: 20px 0 20px 0 ;
+        font-size: 70px;
+        font-weight: bold;
+      }
+      .y{
+        width: 100%;
+        /* height: 50px; */
+        text-align: center;
+        padding: 40px 0;
+        font-size: 30px;
+        text-transform: uppercase;
+        font-weight:lighter;
+        color: grey;
+      }
     </style>
   </head>
   <body>
@@ -84,56 +126,62 @@ margin: 100px auto;
         <span class="date">28</span>
       </div>
     </div> -->
-  <!-- Todo Month Calender -->
+    <!-- Todo Month Calender -->
 
-  <div class="card">
-<div class="row">
-  <span class="month"></span>
-  </div>
+    <div class="card">
+      <div class="row m">
+        <span class="month"></span>
+      </div>
 
-<div class="row">
-  <span class="week"></span>
-</div>
+      <div class="row w">
+        <span class="week"></span>
+      </div>
 
-<div class="row">
-  <span class="date"></span>
+      <div class="row d">
+        <span class="date"></span>
+      </div>
 
-</div>
+      <div class="row y">
+        <span class="year"></span>
+      </div>
+    </div>
 
-<div class="row">
-  <span class="year"></span>
+    <script>
+      let date = new Date();
+      let dates = date.getDate();
 
-</div>
-  </div>
+      let dAtrray = ["sun", "mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+      let day = dAtrray[date.getDay()];
 
+      let mArray = [
+        "Jan",
+        "Feb",
+        "March",
+        "April",
+        "June",
+        "July",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ];
+      let month = mArray[date.getMonth()];
+      let year = date.getFullYear();
 
+      const cMonth = document.querySelector(".month");
+      const CWeek = document.querySelector(".week");
+      const cDate = document.querySelector(".date");
+      const cYear = document.querySelector(".year");
 
-  <script>
-    let date=new Date();
-    let dates=date.getDate();
+      function calender() {
+        cMonth.innerHTML = month;
+        CWeek.innerHTML = day;
+        cDate.innerHTML = dates;
+        cYear.innerHTML = year;
+      }
 
-
-    let dAtrray=["sun","mon","Tue","Wed","Thu","Fri","Sat"];
-    let day=dAtrray[date.getDay()];
-
-
-    let mArray=["Jan","Feb","March","April","June","July","Aug","Sep","Oct","Nov","Dec"]
-    let month= mArray[date.getMonth()];
-    let year=date.getFullYear();
-
-    const cMonth=document.querySelector(".month");
-    const CWeek=document.querySelector(".week");
-    const cDate=document.querySelector(".date");
-    const cYear=document.querySelector(".year");
-
-    function calender(){
-      cMonth.innerHTML=month;
-      CWeek.innerHTML=day;
-      cDate.innerHTML=dates;
-      cYear.innerHTML=year;
-    }
-
-    setInterval(calender,100)
-  </script>
+      setInterval(calender, 100);
+    </script>
   </body>
 </html>
