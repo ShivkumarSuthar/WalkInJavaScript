@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 12: QR Generator</title>
+</head>
+<body>
+    <div class="container">
+        <fieldset>
+            <input type="text" class="input">
+<button class="generate">Generat QR Code</button>
+        </fieldset>
+        <div class="input-box">
+<img src="./" alt="" id="qr">
+        </div>
+    </div>
+
+
+    <script>
+
+        let input=document.querySelector(".input");
+        let generate=document.querySelector(".generate");
+let input_box=document.querySelector(".input-box");
+let qr=document.querySelector("#qr");
+
+generate.addEventListener("click",()=>{
+
+
+    qr.src= `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=` +input.value;
+
+// input_box.appendChild(qrImg);
+    
+})
+    </script>
+</body>
+</html>

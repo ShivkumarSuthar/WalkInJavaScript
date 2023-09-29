@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 11: Note Writing App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style></style>
+</head>
+<body>
+    
+
+    <div class="board">
+        <button class="note"><i class="fa-solid fa-plus"></i></button>
+    </div>
+
+    <script>
+
+        let add=document.querySelector(".note");
+        let board=document.querySelector(".board");
+        let div;
+        let sec;
+        let deletes;
+        add.addEventListener("click",()=>{
+   
+            sec=document.createElement("div");
+            div=document.createElement("input");
+            deletes=document.createElement("button");
+
+            sec.className="notes-board";
+            div.className="notes";
+            deletes.className="delete";
+
+
+            board.appendChild(sec);
+            sec.appendChild(div);
+            deletes.innerHTML="D";
+
+sec.appendChild(deletes);
+
+deletes.addEventListener("click",(e)=>{
+sec.removeChild(div)
+sec.removeChild(e.target)
+  
+})
+
+
+
+
+
+        })
+
+    
+    </script>
+</body>
+</html>
