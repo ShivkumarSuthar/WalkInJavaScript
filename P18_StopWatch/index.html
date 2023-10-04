@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 18: Stop Watch</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@500;700&family=Oswald:wght@400;700&family=Quicksand:wght@400;600&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* font-family: century gothic; */
+            /* font-family: "Cormorant", serif; */
+
+            font-family: "Quicksand", sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* justify-content: center; */
+            background: linear-gradient(135deg,
+                    rgba(0, 21, 255, 0.434),
+                    rgba(99, 194, 99, 0.635));
+            height: 100vh;
+            background-repeat: no-repeat;
+
+            /* flex-direction: column; */
+        }
+
+        .card {
+            width: 500px;
+            height: 400px;
+            display: flex;
+
+            align-items: center;
+            background-color: #fff;
+            padding: 0 0 50px 0;
+            border-radius: 5px;
+            flex-direction: column;
+        }
+
+        button {
+            position: relative;
+            top: 150px;
+            width: 100px;
+            height: 40px;
+            margin: 0 20px;
+            cursor: pointer;
+        }
+
+        .time {
+            text-align: center;
+            position: relative;
+            top: 70px;
+            font-size: 80px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            font-family: "Cormorant", serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <p class="time">
+            <span class="h">00</span><span>:</span><span class="min">00</span><span>:</span><span class="sec">00</span>
+        </p>
+        <div class="button">
+            <button class="btn reset">Reset</button>
+            <button class="btn start">Start</button>
+            <button class="btn stop">Stop</button>
+        </div>
+    </div>
+
+
+        <script>
+    var sec = 0;
+    var min = 0;
+    var h = 0;
+    var timerInterval; // Store the interval ID to manage the timer.
+
+    let isec = document.querySelector(".sec");
+    let imin = document.querySelector(".min");
+    let ih = document.querySelector(".h");
+    let start = document.querySelector(".start");
+    let stop = document.querySelector(".stop");
+    let reset = document.querySelector(".reset");
+
+    start.addEventListener("click", () => {
+      // Start the timer when the "Start" button is clicked
+      timerInterval = setInterval(updateTimer, 1000);
+    });
+
+    stop.addEventListener("click", () => {
+      // Stop the timer when the "Stop" button is clicked
+      clearInterval(timerInterval);
+    });
+
+    reset.addEventListener("click", () => {
+      // Reset the timer when the "Reset" button is clicked
+      clearInterval(timerInterval);
+      sec = 0;
+      min = 0;
+      h = 0;
+      updateTimer();
+    });
+
+    function updateTimer() {
+      sec++;
+      if (sec >= 60) {
+        sec = 0;
+        min++;
+        if (min >= 60) {
+          min = 0;
+          h++;
+        }
+      }
+      // Format the time with leading zeros
+      isec.innerHTML = sec < 10 ? "0" + sec : sec;
+      imin.innerHTML = min < 10 ? "0" + min : min;
+      ih.innerHTML = h < 10 ? "0" + h : h;
+    }
+  </script>
+</body>
+
+</html>
