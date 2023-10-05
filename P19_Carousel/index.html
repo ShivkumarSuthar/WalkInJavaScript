@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 19: Image Carousel</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        overflow: hidden;
+        box-sizing: border-box;
+        background-repeat: no-repeat;
+        height: 100vh;
+      }
+
+      body {
+        background: linear-gradient(
+          135deg,
+          rgb(145, 145, 231),
+          rgb(219, 125, 125)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .carousel {
+        display: flex;
+        width: 50%;
+        height: 60%;
+        background: #fff;
+        border-radius: 5px;
+        background-size: cover;
+        background: url("./dist/narutu.jpg");
+        /* background: url("./dist/jiraya.jpg"); */
+        /* background: url("./dist/nara.jpg"); */
+        /* background: url("./dist/sasuke.jpg"); */
+        /* background: url("./dist/baryan.jpg"); */
+
+        background-position: center;
+      }
+
+      .car-btn {
+        width: 100%;
+        height: 50px;
+        align-self: center;
+        background: none;
+      }
+
+      .car-btn-left {
+        width: 100px;
+        height: 50px;
+        font-size: 30px;
+        text-align: center;
+        padding: 10px;
+        float: left;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+      }
+
+      .car-btn-right {
+        float: right;
+        padding: 0;
+        width: 100px;
+        height: 50px;
+        font-size: 30px;
+        text-align: center;
+        /* padding: 10px; */
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+      .fa-solid {
+        color: #fff;
+        width: 100%;
+        height: 100%;
+      }
+
+      .car-images {
+        width: 100%;
+        height: 100%;
+        background: #000;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="carousel">
+      <div class="car-btn">
+        <button class="car-btn-left">
+          <i class="fa-solid fa-arrow-left-long"></i>
+        </button>
+        <button class="car-btn-right">
+          <i class="fa-solid fa-arrow-right-long"></i>
+        </button>
+      </div>
+    </div>
+
+
+<script>
+    var bg=["./dist/jiraya.jpg","./dist/sasuke.jpg","./dist/nara.jpg","./dist/jiraya.jpg"];
+let carousel=document.querySelector(".carousel");
+let btn_left=document.querySelector(".car-btn-left");
+let btn_right=document.querySelector(".car-btn-right");
+let bgn=-1;
+
+console.log(bg[bgn]);
+
+btn_right.addEventListener("click",()=>{
+    ++bgn
+    if(bgn>3){
+bgn=0;
+    }
+    carousel.style.background=`url(${bg[bgn]})`
+});
+btn_left.addEventListener("click",()=>{
+    bgn--;
+    if(bgn<1){
+bgn=3;
+    }
+    carousel.style.background=`url(${bg[bgn]})`
+})
+
+
+</script>
+  </body>
+</html>
